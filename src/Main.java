@@ -1,6 +1,7 @@
 import java.time.LocalDate;
 
 public class Main {
+//Exercise 1
     public static void printIsLeapYear(int year) {
         boolean leapYear = isLeapYear(year);
         printIsLeapYearResult(year, leapYear);
@@ -17,7 +18,7 @@ public class Main {
             System.out.println(year + " — не високосный год");
         }
     }
-
+// Exercise 2
     public static int getClientOS(String osName) {
         int clientOS = getClientOS(osName);
         if (clientOS == 0) {
@@ -37,18 +38,33 @@ public class Main {
     }
         return currentYear;
     }
-
-    public static void main(String[] args) {
-        // Exercise 1
-        int year = 2020;
-        printIsLeapYear(year);
-
-        //Exercise 2
-        String osName = "Android";
-        int year2 = 2025;
-        printLightAddOsNameResult(year2, osName);
+// Exercise 3
+    public static void printDeliveryPeriod (){
+        int deliveryDistance = 61;
+        int deliveriPeriod = 1;
+        if (deliveryDistance > 20)  {
+            deliveriPeriod++;
+        }
+        if (deliveryDistance > 60)  {
+            deliveriPeriod++;
+        }
+        System.out.println("Для доставки банковской карты потребуется дней " + deliveriPeriod);
     }
-    // Exercise 3
 
+
+        public static void main (String[]args){
+            // Exercise 1
+            int year = 2020;
+            printIsLeapYear(year);
+
+            //Exercise 2
+            String osName = "Android";
+            int year2 = 2025;
+            printLightAddOsNameResult(year2, osName);
+
+            // Exercise 3
+
+            printDeliveryPeriod();
+        }
 
 }
