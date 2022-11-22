@@ -8,7 +8,7 @@ public class Main {
     }
 
     private static boolean isLeapYear(int year) {
-        return year % 4 == 0;
+        return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
     }
 
     private static void printIsLeapYearResult(int year, boolean leapYear) {
@@ -40,26 +40,31 @@ public class Main {
     }
 // Exercise 3
     public static void printDeliveryPeriod (){
-        int deliveryDistance = 61;
+        int deliveryDistance = 95;
         int deliveriPeriod = 1;
-        if (deliveryDistance > 20)  {
-            deliveriPeriod++;
+        if (deliveryDistance >= 0 && deliveryDistance <= 100) {
+            if (deliveryDistance > 20) {
+                deliveriPeriod++;
+            }
+            if (deliveryDistance > 60) {
+                deliveriPeriod++;
+            }
+            System.out.println("Для доставки банковской карты потребуется дней " + deliveriPeriod);
         }
-        if (deliveryDistance > 60)  {
-            deliveriPeriod++;
+        else {
+            System.out.println("Доставка не возможна!");
         }
-        System.out.println("Для доставки банковской карты потребуется дней " + deliveriPeriod);
     }
 
 
         public static void main (String[]args){
             // Exercise 1
-            int year = 2020;
+            int year = 2022;
             printIsLeapYear(year);
 
             //Exercise 2
             String osName = "Android";
-            int year2 = 2025;
+            int year2 = LocalDate.now().getYear();
             printLightAddOsNameResult(year2, osName);
 
             // Exercise 3
